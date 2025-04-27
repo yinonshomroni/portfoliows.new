@@ -1,0 +1,125 @@
+/* Blog Section Enhanced Styles */
+
+/* Make blog post boxes clickable with cursor indicator */
+.post-box {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog Post Overlay */
+.blog-post-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    overflow-y: auto;
+    display: none;
+}
+
+.blog-overlay-content {
+    width: 80%;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Close button */
+.close-blog-overlay {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10001;
+}
+
+.close-blog-overlay:hover {
+    color: #cd1713;
+}
+
+/* Blog header */
+.blog-overlay-header {
+    color: white;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+.blog-overlay-header h2 {
+    color: white;
+	margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Blog content */
+.blog-overlay-text {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.blog-overlay-text p {
+    margin-bottom: 15px;
+}
+
+/* Scrollbar styling for the blog overlay */
+.blog-overlay-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.blog-overlay-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.blog-overlay-text::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.blog-overlay-text::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .blog-overlay-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-overlay-content {
+        width: 95%;
+        padding: 15px;
+        margin: 30px auto;
+    }
+    
+    .blog-overlay-header h2 {
+        font-size: 24px;
+    }
+    
+    .blog-overlay-text {
+        font-size: 15px;
+    }
+}

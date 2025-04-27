@@ -1,0 +1,67 @@
+/* Fixed selector syntax for outer box text (if needed) */
+#services .col-md-4 > h2,
+#services .col-md-4 > p {
+  color: white !important;
+}
+
+/* Base styles for the inner box within #services */
+#services .services-inner-box {
+  padding: 15px;
+  background: white !important;  /* Changed to dark so white text shows */
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect: grow the inner box by 10% */
+#services .services-inner-box:hover {
+  transform: scale(1.1);
+}
+
+/* Force inner box images to be 100px wide */
+#services .services-inner-box img {
+  width: 100px !important;
+  height: auto !important;
+}
+
+/* Force inner box title and paragraph text to white */
+#services .services-inner-box h2,
+#services .services-inner-box p {
+  color: #333333 !important;
+}
+
+/* Ensure icon placeholder images use their own size */
+#services .icon-placeholder img {
+  width: 50px !important;
+  height: auto !important;
+}
+/* Enhanced Modal Styling */
+#service-overlay {
+  background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+}
+
+.overlay-box {
+  background: #333333; /* Match your services box background */
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-height: 80vh; /* Limit height on small screens */
+  overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+#overlay-title {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#overlay-text {
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 20px;
+}
+
+#overlay-image {
+  margin: 20px 0;
+  max-height: 300px; /* Limit image height */
+  object-fit: contain;
+}

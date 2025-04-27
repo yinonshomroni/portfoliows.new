@@ -1,0 +1,321 @@
+/* Simplified Portfolio Section Styles */
+
+/* Main category buttons */
+.filter-button-group {
+    margin-bottom: 20px;
+}
+
+.filter-button-group button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-button-group button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter-button-group button.active {
+    background-color: #cd1713;
+    color: white;
+    box-shadow: 0 4px 8px rgba(205, 23, 19, 0.3);
+}
+
+/* Submenu container and buttons */
+.submenu-container {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.submenu button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.submenu button:hover {
+    background-color: #777;
+    transform: translateY(-1px);
+}
+
+.submenu button.active {
+    background-color: #cd1713;
+    color: white;
+}
+
+/* Portfolio Gallery Preview Items */
+.portfolio-gallery-preview {
+    margin-top: 30px;
+}
+
+.portfolio-item-preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    height: 250px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item-preview:hover img {
+    transform: scale(1.05);
+}
+
+.preview-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item-preview:hover .preview-overlay {
+    transform: translateY(0);
+}
+
+.preview-overlay h4 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.preview-overlay p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Fullsize item viewer */
+.fullsize-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullsize-content {
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.gallery-header {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+}
+
+.fullsize-content img,
+.fullsize-content video {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+}
+
+.fullsize-caption {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.fullsize-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    pointer-events: none;
+}
+
+.fullsize-nav button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    pointer-events: auto;
+}
+
+.fullsize-nav button:hover {
+    background: rgba(205, 23, 19, 0.8);
+}
+
+.close-fullsize {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10001;
+}
+
+.close-fullsize:hover {
+    color: #cd1713;
+}
+
+/* Item loader */
+.item-loader {
+    width: 100%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.item-loader:after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .fullsize-content {
+        max-width: 95%;
+        padding: 20px;
+    }
+    
+    .fullsize-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio-item-preview {
+        height: 200px;
+    }
+
+    .preview-overlay {
+        transform: translateY(0);
+        height: auto;
+        opacity: 0.9;
+    }
+    
+    .fullsize-content {
+        padding: 15px;
+    }
+    
+    .fullsize-nav {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-button-group button,
+    .submenu button {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+    
+    .fullsize-nav button {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .gallery-header h2 {
+        font-size: 20px;
+    }
+    
+    .fullsize-caption {
+        font-size: 14px;
+    }
+}
+
+/* Simplified smooth transition CSS */
+.fullsize-content img,
+.fullsize-content video {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.fullsize-content img[src],
+.fullsize-content video[src] {
+    opacity: 1;
+}
+
+/* Simplified caption CSS */
+.fullsize-caption {
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    position: relative;
+    top: -10px;
+}
